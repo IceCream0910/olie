@@ -1,0 +1,76 @@
+.album-no{
+    display: none;
+}
+
+.search-top{
+    display: flex;
+}
+
+.search-top .right{
+    align-items: center;
+}
+
+.search-box *{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.search-box{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 24px 30px;
+}
+
+.search-box .song-no{
+    width: 30px;
+    margin-right: 30px;
+    text-align: center;
+}
+
+.search-box .song-options  i{
+    font-size: 18px;
+}
+
+.search-box .title-icon{
+    border: 1px solid #3f9ab5;
+    color: #3f9ab5;
+    padding: 1px 10px;
+    font-size: 10px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-right: 6px;
+}
+
+.search-box .hot-icon{
+    border: 1px solid #c54733;
+    color: #c54733;
+    padding: 1px 10px;
+    font-size: 10px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-right: 6px;
+}
+
+.search-box .song-options{
+    margin-left: auto;
+}
+
+.search-box .song-name{
+    flex: 5;
+    padding-right: 50px;
+}
+
+.search-box .song-artist, .search-box .album-name{
+    flex: 2;
+    padding-right: 50px;
+}
+
+.search-box.select{
+    background: #3a3a3a;
+}
+
+.search-top{
+    margin-bottom: 15px;
+}

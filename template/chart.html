@@ -1,0 +1,47 @@
+<div>
+    <div id="first" class="chart-box list-box" no="{{ chart[0]['rank'] }}" >
+        <div class="background" style="{{ 'background-image: url(' + chart[0]['img']+')' }}"></div>
+        <div class="front">
+            <div class="album-thumb">
+                <img src="{{ chart[0]['img']}}" alt="thumb">
+            </div>
+            <div>
+                <h3 class="first-title">현재 1위</h3>
+                <div class="song-detail">
+                    <div>
+                        <h1 class="song-name">{{ chart[0]['title'] }}</h1>
+                        <p class="artist-album-title"><span class="song-artist">{{ chart[0]['artist'] }}</span><span> | </span><spanc class="album-name">{{ chart[0]['album'] }}</span></p>
+                    </div>
+                    <div class="song-options">
+                        <button class="song-play"><i class="fas fa-play"></i></button>
+                        <button class="song-plus"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% for item in chart[1:] %}
+    <div class="chart-box list-box" no="{{ item['rank'] }}">
+        <div class="song-no">
+            <h1>{{ item['rank'] }}</h1>
+        </div>
+        <div class="album-thumb">
+            <img src="{{ item['img']+'/melon/resize/120/quality/80/optimize' }}" alt="thumb">
+        </div>
+        <div class="song-info">
+            <h3 class="song-name">{{ item['title'] }}</h3>
+            <p class="song-artist">{{ item['artist'] }}</p>
+        </div>
+        <div class="album-name">
+            <p>{{ item['album'] }}</p>
+        </div>
+        <div class="song-options">
+            <button class="song-play"><i class="fas fa-play"></i></button>
+            <button class="song-plus"><i class="fas fa-plus"></i></button>
+        </div>
+    </div>
+    {% if loop.index0 < (chart|length)-2 %}
+        <hr>
+    {% endif %}
+    {% endfor %}
+</div>

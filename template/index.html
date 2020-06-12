@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="ko">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,400,700,900&display=swap&subset=korean" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/master.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chart.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/search.css') }}">
+    <title>OLIE - 음악을 듣는 새로운 방법</title>
+</head>
+<body>
+    <div class="left-section section">
+        <div id="header">
+            <h1 class="logo">OLIE</h1>
+            <div id="search-wrap">
+                <input id="search-key" type="text" name="q">
+                <button id="search-btn" type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <div id="content">
+            <div class="chart-top top">
+                <h1 class="title">지금 인기 <span> 제공 <a href="https://www.melon.com/chart/index.htm">Melon</a></span></h1>
+                <div class="chart">
+                    <ul>
+                        <div class="left">
+                            <li class="chart-btn select" data="realtime">실시간</li>
+                            <li class="chart-btn" data="rise">급상승</li>
+                            <li class="chart-btn" data="day">일간</li>
+                            <li class="chart-btn" data="week">주간</li>
+                            <li class="chart-btn" data="month">월간</li>
+                        </div>
+                        <div class="right">
+                            <ul>
+                                <li class="play-all-chart">전체재생</li>
+                                <li class="plus-all-chart">재생목록 추가</li>
+                            </ul>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <div class="search-top top">
+                    <h1 class="title">검색결과 <span>source by <a href="https://www.melon.com/chart/index.htm">Melon</a></span></h1>
+                    <div class="right">
+                        <ul>
+                            <li class="play-all-chart">전체재생</li>
+                            <li class="plus-all-chart">재생목록 추가</li>
+                        </ul>
+                    </div>
+            </div>
+            <div id="list-wrap">
+                <div id="loading">
+                    <h1>Now Loading</h1>
+                </div>
+                <div id="chart-list">
+
+                </div>
+                <div id="search-list">
+                
+                </div>
+            </div>
+            <div class="page-no">
+                <a class="prev-page" href="#"><i class="fas fa-angle-left"></i></a>
+                <a class="now-page" href="#">1</a>
+                <a class="next-page" href="#"><i class="fas fa-angle-right"></i></a>
+            </div>
+
+        </div>
+    </div>
+    <div class="right-section section">
+        <div class="playlist-wrap">
+            <h1>이어지는 곡</h1>
+            <ul id="playlist">
+                
+            </ul>
+            <li class="list-temp">
+                    <p style="display:none" class="song-id"></p>
+                    <img src="/static/images/thumb-frame.png" alt="img">
+                    <div>
+                        <p class="song-name">이름</p>
+                        <p class="song-artist">아티스트</p>
+                    </div>
+                </li>
+        </div>
+        <div id="player">
+            <h3 id="playing-song">선택된 곡이 없습니다</h3>
+            <h3 id="playing-artist">Artist</h3>
+            <div>
+                <button id="prev-btn"><i class="fas fa-step-backward"></i></button>
+                <button id="play-play" class="song-controller select"><i class="fas fa-play"></i></button>
+                <button id="play-pause" class="song-controller"><i class="fas fa-pause"></i></button>
+                <button id="next-btn"><i class="fas fa-step-forward"></i></button>
+            </div>
+            <div class="util">
+                <button id="loof-btn"><i class="fas fa-redo-alt"></i></button>
+                <button id="random-btn"><i class="fas fa-random"></i></button>
+                <button id="volume-btn"><i class="fas fa-volume-down"></i></button> 
+            </div>
+        </div>
+    </div>
+    <div id="alert-box" class="toast">
+        <p class="alert-msg msg">메세지 창입니다</p>
+        <i class="fas fa-times close-toast"></i>
+    </div>
+
+    <div id="select-box" class="toast">
+        <p class="select-msg msg">선택창 </p>
+        <div class="right">
+            <p class="play-select"><i class="fas fa-play"></i></p> 
+            <p class="plus-select"><i class="fas fa-plus"></i></p> 
+            <p class="close-toast"><i class="fas fa-times"></i></p> 
+        </div>
+    </div>
+    <div id="loading-api">
+        <img src="{{url_for('static', filename='images/loading.gif')}}" alt="logaind">
+        <p>로딩중</p>
+    </div>
+    <div id="video-section">
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='js/script.js')}}"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="https://apis.google.com/js/client.js?onload=initYoutubeApi"></script>
+
+</body>
+</html>
+

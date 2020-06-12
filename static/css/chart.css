@@ -1,0 +1,145 @@
+#first{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+#first .background{
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+    opacity: 0.3;   
+    transform: scale(1.1)
+}
+
+#first .front{
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    border-bottom: none;
+}
+
+#first .album-thumb{
+    width: 200px !important;
+    height: 200px !important;
+    margin-right: 30px !important;
+}
+
+#first .first-title{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+#first .song-name{
+    font-size: 30px;
+    margin: 5px 0 3px 0;
+    font-weight: 800;
+}
+
+#first .song-options{
+    margin-top: 20px;
+}
+
+#first .song-options button{
+    margin-right: 20px !important;
+}
+
+.song-options button{
+    border: none;
+    background: none;
+    margin-right: 15px;
+    outline: none;
+}
+
+.song-options i{
+    font-size: 20px;
+}
+
+.chart-box{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 14px 30px;   
+}
+
+.chart-box.select{
+    background: #3a3a3a;
+}
+
+.chart-box .song-no{
+    width: 40px;
+    text-align: center;
+    margin-right: 30px;
+}
+
+.chart-box .song-no h1{
+    font-weight: 100;
+    font-size: 23px;
+}
+
+.chart-box .album-thumb{
+    width: 80px;
+    height: 80px;
+    margin-right: 24px;
+}
+
+.chart-box *{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.chart-box .song-info{
+    flex: 4;
+    padding-right: 50px;
+}
+
+.chart-box .album-name{
+    flex: 2;
+    padding-right: 50px;
+}
+
+.chart-box .song-options{
+    flex: 1;
+}
+
+.chart-box .album-thumb img{
+    width: 100%;
+    height: 100%;
+}
+
+.chart-box .song-name{
+    font-size: 17px;
+    font-weight: 400;
+    margin-bottom: 3px;
+    text-overflow: ellipsis;
+    padding-right: 50px;
+}
+
+.chart-box .song-artist{
+    font-weight: 100;
+    font-size: 14px;
+    text-overflow: ellipsis;
+}
+
+.artist-album-title *{
+    font-weight: 100;
+    font-size: 14px;
+}
+
+.chart-top{
+    margin-bottom: 15px;
+}

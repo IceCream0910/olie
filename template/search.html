@@ -1,0 +1,26 @@
+<div>
+    {% for item in search %}
+    <div class="search-box list-box" no="{{ item['rank'] }}">
+        <p class="song-no">{{ item['no'] }}</p>
+        <p class="song-name">
+            {% if item['is_title'] == 'true' %}
+                <span class="title-icon">TITLE</span>
+            {% endif %}
+            {% if item['is_hot'] == 'true' %}
+                <span class="hot-icon">HOT</span>
+            {% endif %}
+            {{ item['title'] }}
+        </p>
+        <p class="song-artist">{{ item['artist'] }}</p>
+        <p class="album-name">{{ item['album'] }}</p>
+        <div class="song-options">
+            <button class="song-play"><i class="fas fa-play"></i></button>
+            <button class="song-plus"><i class="fas fa-plus"></i></button>
+        </div>
+        <p class="album-no">{{ item['album_no'] }}</p>
+    </div>
+    {% if loop.index0 < (search|length)-1 %}
+        <hr>
+    {% endif %}
+    {% endfor %}
+</div>
